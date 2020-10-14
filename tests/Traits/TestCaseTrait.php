@@ -45,8 +45,8 @@ trait TestCaseTrait
      */
     public function migrate()
     {
-        $this->loadLaravelMigrations(['--database' => 'testbench']);
-        $this->artisan('migrate', ['--database' => 'testbench']);
+        $this->loadLaravelMigrations();
+        $this->artisan('migrate');
     }
 
     /**
@@ -56,7 +56,7 @@ trait TestCaseTrait
     {
         $this->removeMigrationFiles();
         $this->removeSeederFiles();
-        // $this->removeIfExist(config_path('config.php'));
+        $this->removeIfExist(config_path('lookup.php'));
     }
 
     /**
@@ -117,10 +117,14 @@ trait TestCaseTrait
      */
     public function publish()
     {
-        // $this->artisan('vendor:publish', [
-        //     '--force' => true,
-        //     '--tag'   => 'config',
-        // ]);
+        $this->artisan('vendor:publish', [
+            '--force' => true,
+            '--tag'   => 'lookup-config',
+        ]);
+        $this->artisan('vendor:publish', [
+            '--force' => true,
+            '--tag'   => 'lookup-migrations',
+        ]);
     }
 
     /**

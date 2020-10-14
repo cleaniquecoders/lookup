@@ -1,0 +1,30 @@
+<?php 
+
+namespace CleaniqueCoders\Lookup\Tests;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+
+class HelperTest extends TestCase
+{
+	/**
+     * Setup the test environment.
+     */
+    public function setUp(): void
+    {
+        parent::setUp();
+        $this->republish();
+        $this->migrate();
+    }
+
+    /** @test */
+    public function has_lookup_helper()
+    {
+    	$this->assertHasHelper('lookup');
+    }
+
+    /** @test */
+    public function has_metadata_Helper()
+    {
+    	$this->assertHasTable('metadata');
+    }
+}

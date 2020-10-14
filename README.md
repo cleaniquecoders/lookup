@@ -3,29 +3,41 @@
 
 ## About Your Package
 
-Lookup package allow you to store common lookup data such as status, coun
+Lookup package allow you to have common information such contact types, education levels, etc.
+
+A full list of keys are available [keys](keys).
+
+For metadata, following are the current list available.
+
+1. Social Media
+2. Currency
+3. Country
+4. Technical Skill
+5. Database
+6. Language
+7. MIME
+8. Skills Proficiency
+
+Please take note all above are sample of the data available. You may modify as necessary when you have publish / create your own seeders.
 
 ## Installation
 
-1. In order to install `cleanique-coders/lookup` in your Laravel project, just run the *composer require* command from your terminal:
+In order to install `cleanique-coders/lookup` in your Laravel project, just run the *composer require* command from your terminal:
 
 ```
 $ composer require cleanique-coders/lookup
 ```
 
-2. Then in your `config/app.php` add the following to the providers array:
-
-```php
-CleaniqueCoders\Lookup\LookupServiceProvider::class,
-```
-
-3. In the same `config/app.php` add the following to the aliases array:
-
-```php
-'Lookup' => CleaniqueCoders\Lookup\LookupFacade::class,
-```
-
 ## Usage
+
+Publish lookup related assets:
+
+```
+$ php artisan vendor:publish --tag=lookup-config
+$ php artisan vendor:publish --tag=lookup-migrations
+$ php artisan vendor:publish --tag=lookup-seeder
+$ php artisan vendor:publish --tag=lookup-schemas
+```
 
 ## Test
 

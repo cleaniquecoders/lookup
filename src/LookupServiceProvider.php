@@ -14,12 +14,12 @@ class LookupServiceProvider extends ServiceProvider
     public function boot(Filesystem $filesystem)
     {
         $this->publishes([
-            __DIR__.'/../config/lookup.php' => config_path('lookup.php'),
+            __DIR__ . '/../config/lookup.php' => config_path('lookup.php'),
         ], 'lookup-config');
 
         $this->publishes([
-            __DIR__.'/../database/migrations/create_metadata_table.php.stub' => $this->getMigrationFileName($filesystem, 'create_metadata_table'),
-            __DIR__.'/../database/migrations/create_lookups_table.php.stub' => $this->getMigrationFileName($filesystem, 'create_lookups_table'),
+            __DIR__ . '/../database/migrations/create_metadata_table.php.stub' => $this->getMigrationFileName($filesystem, 'create_metadata_table'),
+            __DIR__ . '/../database/migrations/create_lookups_table.php.stub'  => $this->getMigrationFileName($filesystem, 'create_lookups_table'),
         ], 'lookup-migrations');
     }
 
@@ -32,18 +32,15 @@ class LookupServiceProvider extends ServiceProvider
 
     /**
      * Returns existing migration file if found, else uses the current timestamp.
-     *
-     * @param Filesystem $filesystem
-     * @return string
      */
     protected function getMigrationFileName(Filesystem $filesystem, string $file): string
     {
         $timestamp = date('Y_m_d_His');
 
-        return Collection::make($this->app->databasePath().DIRECTORY_SEPARATOR.'migrations'.DIRECTORY_SEPARATOR)
+        return Collection::make($this->app->databasePath() . DIRECTORY_SEPARATOR . 'migrations' . DIRECTORY_SEPARATOR)
             ->flatMap(function ($path) use ($filesystem, $file) {
-                return $filesystem->glob($path.'*_'.$file.'.php');
-            })->push($this->app->databasePath()."/migrations/{$timestamp}_{$file}.php")
+                return $filesystem->glob($path . '*_' . $file . '.php');
+            })->push($this->app->databasePath() . "/migrations/{$timestamp}_{$file}.php")
             ->first();
     }
 }

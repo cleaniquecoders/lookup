@@ -1,0 +1,24 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class LookupSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        $sqls = explode(';', file_get_contents(config('lookup.seeder_path')));
+        foreach ($sqls as $sql) {
+            if (! empty(trim($sql))) {
+                DB::connection(config('database.default'))->statement($sql);
+            }
+        }
+    }
+}

@@ -3,7 +3,7 @@
 
 ## About Your Package
 
-Tell people about your package
+Lookup package allow you to store common lookup data such as status, coun
 
 ## Installation
 

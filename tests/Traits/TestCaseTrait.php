@@ -57,6 +57,7 @@ trait TestCaseTrait
         $this->removeMigrationFiles();
         $this->removeSeederFiles();
         $this->removeIfExist(config_path('lookup.php'));
+        $this->removeSchemaFiles();
     }
 
     /**
@@ -94,7 +95,18 @@ trait TestCaseTrait
      */
     public function removeSeederFiles()
     {
-        collect(glob(database_path('seeds/*.php')))
+        collect(glob(database_path('seeders/*.php')))
+            ->each(function ($path) {
+                $this->removeIfExist($path);
+            });
+    }
+
+    /**
+     * Remove all schemas files if exist.
+     */
+    public function removeSchemaFiles()
+    {
+        collect(glob(database_path('schemas/*.sql')))
             ->each(function ($path) {
                 $this->removeIfExist($path);
             });
@@ -124,6 +136,14 @@ trait TestCaseTrait
         $this->artisan('vendor:publish', [
             '--force' => true,
             '--tag'   => 'lookup-migrations',
+        ]);
+        $this->artisan('vendor:publish', [
+            '--force' => true,
+            '--tag'   => 'lookup-seeder',
+        ]);
+        $this->artisan('vendor:publish', [
+            '--force' => true,
+            '--tag'   => 'lookup-schemas',
         ]);
     }
 

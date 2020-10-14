@@ -15,6 +15,7 @@ class CreateLookupsTable extends Migration
     {
         Schema::create('lookups', function (Blueprint $table) {
             $table->id();
+            $table->uuid('uuid')->nullable();
             $table->string('key');
             $table->string('value');
             $table->json('meta')->nullable();

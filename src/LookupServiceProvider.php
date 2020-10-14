@@ -21,6 +21,14 @@ class LookupServiceProvider extends ServiceProvider
             __DIR__ . '/../database/migrations/create_metadata_table.php.stub' => $this->getMigrationFileName($filesystem, 'create_metadata_table'),
             __DIR__ . '/../database/migrations/create_lookups_table.php.stub'  => $this->getMigrationFileName($filesystem, 'create_lookups_table'),
         ], 'lookup-migrations');
+
+        $this->publishes([
+            __DIR__ . '/../database/seeders/LookupSeeder.php.stub' => $this->app->databasePath() . "/seeders/LookupSeeder.php",
+        ], 'lookup-seeder');
+
+        $this->publishes([
+            __DIR__ . '/../database/schemas/lookup.sql' => $this->app->databasePath() . "/schemas/lookup.sql",
+        ], 'lookup-schemas');
     }
 
     /**

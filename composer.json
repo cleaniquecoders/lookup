@@ -11,7 +11,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "CleaniqueCoders\\Lookup\\": "src/"
+            "CleaniqueCoders\\Lookup\\": "src/",
+            "CleaniqueCoders\\Lookup\\Database\\Seeders\\": "database/seeders/"
         },
         "files": [
             "src/Support/helpers.php"

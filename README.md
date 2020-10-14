@@ -39,6 +39,18 @@ $ php artisan vendor:publish --tag=lookup-seeder
 $ php artisan vendor:publish --tag=lookup-schemas
 ```
 
+Get lookup data:
+
+```php
+lookup('education.qualification');
+```
+
+Get metada data:
+
+```php
+metadata('Currency');
+```
+
 ## Test
 
 Run the following command:

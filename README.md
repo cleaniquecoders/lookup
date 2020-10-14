@@ -1,5 +1,5 @@
 
-[![Build Status](https://travis-ci.org/cleanique-coders/lookup.svg?branch=master)](https://travis-ci.org/cleanique-coders/lookup) [![Latest Stable Version](https://poser.pugx.org/cleanique-coders/lookup/v/stable)](https://packagist.org/packages/cleanique-coders/lookup) [![Total Downloads](https://poser.pugx.org/cleanique-coders/lookup/downloads)](https://packagist.org/packages/cleanique-coders/lookup) [![License](https://poser.pugx.org/cleanique-coders/lookup/license)](https://packagist.org/packages/cleanique-coders/lookup)
+[![Build Status](https://travis-ci.org/cleaniquecoders/lookup.svg?branch=master)](https://travis-ci.org/cleaniquecoders/lookup) [![Latest Stable Version](https://poser.pugx.org/cleaniquecoders/lookup/v/stable)](https://packagist.org/packages/cleaniquecoders/lookup) [![Total Downloads](https://poser.pugx.org/cleaniquecoders/lookup/downloads)](https://packagist.org/packages/cleaniquecoders/lookup) [![License](https://poser.pugx.org/cleaniquecoders/lookup/license)](https://packagist.org/packages/cleaniquecoders/lookup)
 
 ## About Your Package
 
@@ -22,10 +22,10 @@ Please take note all above are sample of the data available. You may modify as n
 
 ## Installation
 
-In order to install `cleanique-coders/lookup` in your Laravel project, just run the *composer require* command from your terminal:
+In order to install `cleaniquecoders/lookup` in your Laravel project, just run the *composer require* command from your terminal:
 
 ```
-$ composer require cleanique-coders/lookup
+$ composer require cleaniquecoders/lookup
 ```
 
 ## Usage
@@ -61,7 +61,7 @@ $ vendor/bin/phpunit  --testdox --verbose
 
 ## Contributing
 
-Thank you for considering contributing to the `cleanique-coders/lookup`!
+Thank you for considering contributing to the `cleaniquecoders/lookup`!
 
 ### Bug Reports
 
@@ -73,7 +73,7 @@ Remember, bug reports are created in the hope that others with the same problem 
 
 ## Coding Style
 
-`cleanique-coders/lookup` follows the PSR-2 coding standard and the PSR-4 autoloading standard. 
+`cleaniquecoders/lookup` follows the PSR-2 coding standard and the PSR-4 autoloading standard. 
 
 You may use PHP CS Fixer in order to keep things standardised. PHP CS Fixer configuration can be found in `.php_cs`.
 

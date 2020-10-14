@@ -1,7 +1,7 @@
 {
-    "name": "cleanique-coders/lookup",
-    "description": "Built with Laravel Standalone Package Creator",
-    "keywords": ["package", "laravel"],
+    "name": "cleaniquecoders/lookup",
+    "description": "Set of lookup information",
+    "keywords": ["package", "laravel", "lookup"],
     "license": "MIT",
     "authors": [
         {

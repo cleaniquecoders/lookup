@@ -17,7 +17,7 @@ class SeederTest extends TestCase
     /** @test */
     public function has_seeder_class()
     {
-        $this->assertFileExists($this->app->databasePath() . "/seeders/LookupSeeder.php");
+        $this->assertFileExists($this->app->databasePath() . '/seeders/LookupSeeder.php');
     }
 
     /** @test */

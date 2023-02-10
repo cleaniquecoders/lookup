@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 
 class LookupSeeder extends Seeder
@@ -15,9 +14,7 @@ class LookupSeeder extends Seeder
      */
     public function run()
     {
-        $content = file_get_contents(
-            json_decode(config('lookup.seeder'))
-        );
+        $content = json_decode(file_get_contents(config('lookup.seeder')), JSON_OBJECT_AS_ARRAY);
 
         foreach($content as $lookup) {
             $lookup['uuid'] = Str::uuid()->toString();

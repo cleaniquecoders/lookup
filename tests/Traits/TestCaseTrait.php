@@ -37,7 +37,7 @@ trait TestCaseTrait
      */
     public function loadFactories()
     {
-        $this->withFactories(realpath(__DIR__ . '/../factories'));
+        $this->withFactories(realpath(__DIR__.'/../factories'));
     }
 
     /**
@@ -115,7 +115,7 @@ trait TestCaseTrait
     /**
      * Remove file if exists.
      *
-     * @param string $path
+     * @param  string  $path
      */
     public function removeIfExist($path)
     {
@@ -131,19 +131,19 @@ trait TestCaseTrait
     {
         $this->artisan('vendor:publish', [
             '--force' => true,
-            '--tag'   => 'lookup-config',
+            '--tag' => 'lookup-config',
         ]);
         $this->artisan('vendor:publish', [
             '--force' => true,
-            '--tag'   => 'lookup-migrations',
+            '--tag' => 'lookup-migrations',
         ]);
         $this->artisan('vendor:publish', [
             '--force' => true,
-            '--tag'   => 'lookup-seeder',
+            '--tag' => 'lookup-seeder',
         ]);
         $this->artisan('vendor:publish', [
             '--force' => true,
-            '--tag'   => 'lookup-data',
+            '--tag' => 'lookup-data',
         ]);
     }
 
@@ -158,16 +158,16 @@ trait TestCaseTrait
     /**
      * Define environment setup.
      *
-     * @param \Illuminate\Foundation\Application $app
+     * @param  \Illuminate\Foundation\Application  $app
      */
     protected function getEnvironmentSetUp($app)
     {
         // Setup default database to use sqlite :memory:
         $app['config']->set('database.default', 'testbench');
         $app['config']->set('database.connections.testbench', [
-            'driver'   => 'sqlite',
+            'driver' => 'sqlite',
             'database' => ':memory:',
-            'prefix'   => '',
+            'prefix' => '',
         ]);
     }
 
@@ -178,7 +178,7 @@ trait TestCaseTrait
     /**
      * Assert the current database has table.
      *
-     * @param string $table table name
+     * @param  string  $table table name
      */
     protected function assertHasTable($table)
     {
@@ -188,8 +188,8 @@ trait TestCaseTrait
     /**
      * Assert the table has columns defined.
      *
-     * @param string $table   table name
-     * @param array  $columns list of columns
+     * @param  string  $table   table name
+     * @param  array  $columns list of columns
      */
     protected function assertTableHasColumns($table, $columns)
     {
@@ -201,7 +201,7 @@ trait TestCaseTrait
     /**
      * Assert has helper.
      *
-     * @param string $helper helper name
+     * @param  string  $helper helper name
      */
     protected function assertHasHelper($helper)
     {
@@ -211,17 +211,17 @@ trait TestCaseTrait
     /**
      * Assert has config.
      *
-     * @param string $config config name
+     * @param  string  $config config name
      */
     protected function assertHasConfig($config)
     {
-        $this->assertFileExists(config_path($config . '.php'));
+        $this->assertFileExists(config_path($config.'.php'));
     }
 
     /**
      * Assert has migration.
      *
-     * @param string $migration migration name
+     * @param  string  $migration migration name
      */
     protected function assertHasMigration($migration)
     {
@@ -231,7 +231,7 @@ trait TestCaseTrait
     /**
      * Assert has class.
      *
-     * @param string $class class name
+     * @param  string  $class class name
      */
     protected function assertHasClass($class)
     {
@@ -241,8 +241,8 @@ trait TestCaseTrait
     /**
      * Assert has class method exist.
      *
-     * @param string $object object
-     * @param string $method method
+     * @param  string  $object object
+     * @param  string  $method method
      */
     protected function assertHasClassMethod($object, $method)
     {

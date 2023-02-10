@@ -14,19 +14,19 @@ class LookupServiceProvider extends ServiceProvider
     public function boot(Filesystem $filesystem)
     {
         $this->publishes([
-            __DIR__ . '/../config/lookup.php' => config_path('lookup.php'),
+            __DIR__.'/../config/lookup.php' => config_path('lookup.php'),
         ], 'lookup-config');
 
         $this->publishes([
-            __DIR__ . '/../database/migrations/create_lookups_table.php.stub'  => $this->getMigrationFileName($filesystem, 'create_lookups_table'),
+            __DIR__.'/../database/migrations/create_lookups_table.php.stub' => $this->getMigrationFileName($filesystem, 'create_lookups_table'),
         ], 'lookup-migrations');
 
         $this->publishes([
-            __DIR__ . '/../database/seeders/LookupSeeder.php.stub' => $this->app->databasePath() . '/seeders/LookupSeeder.php',
+            __DIR__.'/../database/seeders/LookupSeeder.php.stub' => $this->app->databasePath().'/seeders/LookupSeeder.php',
         ], 'lookup-seeder');
 
         $this->publishes([
-            __DIR__ . '/../stubs/lookup.json' => $this->app->storagePath() . '/app/lookup.json',
+            __DIR__.'/../stubs/lookup.json' => $this->app->storagePath().'/app/lookup.json',
         ], 'lookup-data');
     }
 
@@ -44,10 +44,10 @@ class LookupServiceProvider extends ServiceProvider
     {
         $timestamp = date('Y_m_d_His');
 
-        return Collection::make($this->app->databasePath() . DIRECTORY_SEPARATOR . 'migrations' . DIRECTORY_SEPARATOR)
+        return Collection::make($this->app->databasePath().DIRECTORY_SEPARATOR.'migrations'.DIRECTORY_SEPARATOR)
             ->flatMap(function ($path) use ($filesystem, $file) {
-                return $filesystem->glob($path . '*_' . $file . '.php');
-            })->push($this->app->databasePath() . "/migrations/{$timestamp}_{$file}.php")
+                return $filesystem->glob($path.'*_'.$file.'.php');
+            })->push($this->app->databasePath()."/migrations/{$timestamp}_{$file}.php")
             ->first();
     }
 }

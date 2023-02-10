@@ -1,21 +1,8 @@
-[![Test](https://github.com/cleaniquecoders/lookup/actions/workflows/run-tests.yml/badge.svg)](https://github.com/cleaniquecoders/lookup/actions/workflows/run-tests.yml) [![Update Changelog](https://github.com/cleaniquecoders/lookup/actions/workflows/update-changelog.yml/badge.svg)](https://github.com/cleaniquecoders/lookup/actions/workflows/update-changelog.yml) [![PHPStan](https://github.com/cleaniquecoders/lookup/actions/workflows/phpstan.yml/badge.svg)](https://github.com/cleaniquecoders/lookup/actions/workflows/phpstan.yml) [![Fix PHP Code Styling](https://github.com/cleaniquecoders/lookup/actions/workflows/fix-php-code-style-issues.yml.yml/badge.svg)](https://github.com/cleaniquecoders/lookup/actions/workflows/fix-php-code-style-issues.yml.yml)
+[![Test](https://github.com/cleaniquecoders/lookup/actions/workflows/run-tests.yml/badge.svg)](https://github.com/cleaniquecoders/lookup/actions/workflows/run-tests.yml) [![Update Changelog](https://github.com/cleaniquecoders/lookup/actions/workflows/update-changelog.yml/badge.svg)](https://github.com/cleaniquecoders/lookup/actions/workflows/update-changelog.yml) [![PHP Linting (Pint)](https://github.com/cleaniquecoders/lookup/actions/workflows/lint.yml/badge.svg)](https://github.com/cleaniquecoders/lookup/actions/workflows/lint.yml)
 
 ## About Your Package
 
 Lookup package allow you to have common information such contact types, education levels, etc.
-
-A full list of keys are available [keys](keys).
-
-For metadata, following are the current list available.
-
-1. Social Media
-2. Currency
-3. Country
-4. Technical Skill
-5. Database
-6. Language
-7. MIME
-8. Skills Proficiency
 
 Please take note all above are sample of the data available. You may modify as necessary when you have publish / create your own seeders.
 
@@ -42,12 +29,6 @@ Get lookup data:
 
 ```php
 lookup('education.qualification');
-```
-
-Get metada data:
-
-```php
-metadata('Currency');
 ```
 
 ## Test

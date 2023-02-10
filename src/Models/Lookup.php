@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace CleaniqueCoders\Lookup\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

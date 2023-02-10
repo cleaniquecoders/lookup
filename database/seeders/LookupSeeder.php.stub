@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class LookupSeeder extends Seeder
 {
@@ -14,11 +15,13 @@ class LookupSeeder extends Seeder
      */
     public function run()
     {
-        $sqls = explode(';', file_get_contents(config('lookup.seeder_path')));
-        foreach ($sqls as $sql) {
-            if (! empty(trim($sql))) {
-                DB::connection(config('database.default'))->statement($sql);
-            }
+        $content = file_get_contents(
+            json_decode(config('lookup.seeder'))
+        );
+
+        foreach($content as $lookup) {
+            $lookup['uuid'] = Str::uuid()->toString();
+            config('lookup.model')::create($lookup);
         }
     }
 }

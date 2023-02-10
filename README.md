@@ -1,5 +1,4 @@
-
-[![Build Status](https://travis-ci.org/cleaniquecoders/lookup.svg?branch=master)](https://travis-ci.org/cleaniquecoders/lookup) [![Latest Stable Version](https://poser.pugx.org/cleaniquecoders/lookup/v/stable)](https://packagist.org/packages/cleaniquecoders/lookup) [![Total Downloads](https://poser.pugx.org/cleaniquecoders/lookup/downloads)](https://packagist.org/packages/cleaniquecoders/lookup) [![License](https://poser.pugx.org/cleaniquecoders/lookup/license)](https://packagist.org/packages/cleaniquecoders/lookup)
+[![Test](https://github.com/cleaniquecoders/lookup/actions/workflows/run-tests.yml/badge.svg)](https://github.com/cleaniquecoders/lookup/actions/workflows/run-tests.yml) [![Update Changelog](https://github.com/cleaniquecoders/lookup/actions/workflows/update-changelog.yml/badge.svg)](https://github.com/cleaniquecoders/lookup/actions/workflows/update-changelog.yml) [![PHPStan](https://github.com/cleaniquecoders/lookup/actions/workflows/phpstan.yml/badge.svg)](https://github.com/cleaniquecoders/lookup/actions/workflows/phpstan.yml) [![Fix PHP Code Styling](https://github.com/cleaniquecoders/lookup/actions/workflows/fix-php-code-style-issues.yml.yml/badge.svg)](https://github.com/cleaniquecoders/lookup/actions/workflows/fix-php-code-style-issues.yml.yml)
 
 ## About Your Package
 
@@ -22,21 +21,21 @@ Please take note all above are sample of the data available. You may modify as n
 
 ## Installation
 
-In order to install `cleaniquecoders/lookup` in your Laravel project, just run the *composer require* command from your terminal:
+In order to install `cleaniquecoders/lookup` in your Laravel project, just run the _composer require_ command from your terminal:
 
-```
-$ composer require cleaniquecoders/lookup
+```bash
+composer require cleaniquecoders/lookup
 ```
 
 ## Usage
 
 Publish lookup related assets:
 
-```
-$ php artisan vendor:publish --tag=lookup-config
-$ php artisan vendor:publish --tag=lookup-migrations
-$ php artisan vendor:publish --tag=lookup-seeder
-$ php artisan vendor:publish --tag=lookup-schemas
+```bash
+php artisan vendor:publish --tag=lookup-config
+php artisan vendor:publish --tag=lookup-migrations
+php artisan vendor:publish --tag=lookup-seeder
+php artisan vendor:publish --tag=lookup-schemas
 ```
 
 Get lookup data:
@@ -55,8 +54,8 @@ metadata('Currency');
 
 Run the following command:
 
-```
-$ vendor/bin/phpunit  --testdox --verbose
+```bash
+vendor/bin/phpunit  --testdox --verbose
 ```
 
 ## Contributing
@@ -73,7 +72,7 @@ Remember, bug reports are created in the hope that others with the same problem 
 
 ## Coding Style
 
-`cleaniquecoders/lookup` follows the PSR-2 coding standard and the PSR-4 autoloading standard. 
+`cleaniquecoders/lookup` follows the PSR-2 coding standard and the PSR-4 autoloading standard.
 
 You may use PHP CS Fixer in order to keep things standardised. PHP CS Fixer configuration can be found in `.php_cs`.
 

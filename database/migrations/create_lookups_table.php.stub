@@ -16,13 +16,12 @@ class CreateLookupsTable extends Migration
         Schema::create('lookups', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid')->nullable();
+            $table->string('category')->nullable();
             $table->string('key');
             $table->string('value');
             $table->json('meta')->nullable();
-            $table->json('extra')->nullable();
             $table->string('description')->nullable();
             $table->integer('order_by')->nullable();
-            $table->foreignId('metadata_id')->nullable()->constrained('metadata')->onDelete('no action')->onUpdate('no action')->index('fk_lookup_lookup_meta1_idx');
             $table->timestamps();
         });
     }

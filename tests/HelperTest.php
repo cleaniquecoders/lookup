@@ -19,10 +19,4 @@ class HelperTest extends TestCase
     {
         $this->assertHasHelper('lookup');
     }
-
-    /** @test */
-    public function has_metadata_Helper()
-    {
-        $this->assertHasTable('metadata');
-    }
 }

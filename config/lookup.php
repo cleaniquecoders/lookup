@@ -1,8 +1,9 @@
 <?php
 
+use CleaniqueCoders\Lookup\Models\Lookup;
+
 return [
-    'model'          => \CleaniqueCoders\Lookup\Models\Lookup::class,
-    'metadata'       => \CleaniqueCoders\Lookup\Models\Metada::class,
-    'cache_duration' => 60,
-    'seeder_path'    => base_path('/database/schemas/lookup.sql'),
+    'model' => Lookup::class,
+    'cache_duration' => env('LOOKUP_CACHE_DURATION', 60),
+    'seeder' => base_path('/app/lookup.json'),
 ];

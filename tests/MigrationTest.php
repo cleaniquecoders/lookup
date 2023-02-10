@@ -19,10 +19,4 @@ class MigrationTest extends TestCase
     {
         $this->assertHasTable('lookups');
     }
-
-    /** @test */
-    public function has_metadata_table()
-    {
-        $this->assertHasTable('metadata');
-    }
 }

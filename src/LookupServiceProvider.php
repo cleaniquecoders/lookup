@@ -18,7 +18,6 @@ class LookupServiceProvider extends ServiceProvider
         ], 'lookup-config');
 
         $this->publishes([
-            __DIR__ . '/../database/migrations/create_metadata_table.php.stub' => $this->getMigrationFileName($filesystem, 'create_metadata_table'),
             __DIR__ . '/../database/migrations/create_lookups_table.php.stub'  => $this->getMigrationFileName($filesystem, 'create_lookups_table'),
         ], 'lookup-migrations');
 
@@ -27,8 +26,8 @@ class LookupServiceProvider extends ServiceProvider
         ], 'lookup-seeder');
 
         $this->publishes([
-            __DIR__ . '/../database/schemas/lookup.sql' => $this->app->databasePath() . '/schemas/lookup.sql',
-        ], 'lookup-schemas');
+            __DIR__ . '/../stubs/lookup.json' => $this->app->storagePath() . '/app/lookup.json',
+        ], 'lookup-data');
     }
 
     /**

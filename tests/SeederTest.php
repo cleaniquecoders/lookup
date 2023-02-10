@@ -23,6 +23,6 @@ class SeederTest extends TestCase
     /** @test */
     public function has_lookup_schema()
     {
-        $this->assertFileExists(database_path('schemas/lookup.sql'));
+        $this->assertFileExists(storage_path('app/lookup.json'));
     }
 }

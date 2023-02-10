@@ -106,7 +106,7 @@ trait TestCaseTrait
      */
     public function removeSchemaFiles()
     {
-        collect(glob(database_path('schemas/*.sql')))
+        collect(glob(storage_path('app/*.json')))
             ->each(function ($path) {
                 $this->removeIfExist($path);
             });
@@ -143,7 +143,7 @@ trait TestCaseTrait
         ]);
         $this->artisan('vendor:publish', [
             '--force' => true,
-            '--tag'   => 'lookup-schemas',
+            '--tag'   => 'lookup-data',
         ]);
     }
 

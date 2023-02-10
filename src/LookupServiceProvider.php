@@ -22,7 +22,7 @@ class LookupServiceProvider extends ServiceProvider
         ], 'lookup-migrations');
 
         $this->publishes([
-            __DIR__.'/../database/seeders/LookupSeeder.php.stub' => $this->app->databasePath().'/seeders/LookupSeeder.php',
+            __DIR__.'/../stubs/LookupSeeder.stub' => $this->app->databasePath().'/seeders/LookupSeeder.php',
         ], 'lookup-seeder');
 
         $this->publishes([

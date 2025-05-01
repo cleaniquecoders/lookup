@@ -33,9 +33,7 @@ class LookupServiceProvider extends ServiceProvider
     /**
      * Register the application services.
      */
-    public function register()
-    {
-    }
+    public function register() {}
 
     /**
      * Returns existing migration file if found, else uses the current timestamp.

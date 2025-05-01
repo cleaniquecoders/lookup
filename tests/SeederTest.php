@@ -7,7 +7,7 @@ class SeederTest extends TestCase
     /**
      * Setup the test environment.
      */
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
         $this->republish();

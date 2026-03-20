@@ -2,6 +2,8 @@
 
 namespace CleaniqueCoders\Lookup\Tests\Traits;
 
+use PHPUnit\Framework\Attributes\Test;
+
 trait UserTrait
 {
     public $user;
@@ -43,7 +45,7 @@ trait UserTrait
         $this->getAUser();
     }
 
-    /** @test */
+    #[Test]
     public function it_has_users()
     {
         $this->truncateUsersTable();

@@ -2,19 +2,21 @@
 
 namespace CleaniqueCoders\Lookup\Tests;
 
+use PHPUnit\Framework\Attributes\Test;
+
 class HelperTest extends TestCase
 {
     /**
      * Setup the test environment.
      */
-    protected function setUp(): void
+    public function setUp(): void
     {
         parent::setUp();
         $this->republish();
         $this->migrate();
     }
 
-    /** @test */
+    #[Test]
     public function has_lookup_helper()
     {
         $this->assertHasHelper('lookup');

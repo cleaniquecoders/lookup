@@ -2,6 +2,7 @@
 
 namespace CleaniqueCoders\Lookup\Tests\Traits;
 
+use Carbon\Carbon;
 use PHPUnit\Framework\Attributes\Test;
 
 trait UserTrait
@@ -15,7 +16,7 @@ trait UserTrait
 
     public function seedUsers()
     {
-        $now = \Carbon\Carbon::now();
+        $now = Carbon::now();
         \DB::table('users')->insert([
             'name' => 'PHPUnit',
             'email' => 'hello@phpunit.com',

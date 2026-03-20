@@ -2,6 +2,8 @@
 
 namespace CleaniqueCoders\Lookup\Tests\Traits;
 
+use Illuminate\Database\Eloquent\Model;
+
 trait SeedTrait
 {
     /**
@@ -9,7 +11,7 @@ trait SeedTrait
      *
      * @param  array  $datum
      * @param  string  $class  Fully Qualified Class Name, FQCN
-     * @return \Illuminate\Database\Eloquent\Model
+     * @return Model
      */
     public function seedDatum($datum, $class)
     {

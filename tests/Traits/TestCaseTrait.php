@@ -2,6 +2,7 @@
 
 namespace CleaniqueCoders\Lookup\Tests\Traits;
 
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Schema;
 
 trait TestCaseTrait
@@ -158,7 +159,7 @@ trait TestCaseTrait
     /**
      * Define environment setup.
      *
-     * @param  \Illuminate\Foundation\Application  $app
+     * @param  Application  $app
      */
     protected function getEnvironmentSetUp($app)
     {

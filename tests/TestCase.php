@@ -2,6 +2,9 @@
 
 namespace CleaniqueCoders\Lookup\Tests;
 
+use CleaniqueCoders\Lookup\LookupServiceProvider;
+use Illuminate\Foundation\Application;
+
 class TestCase extends \Orchestra\Testbench\TestCase
 {
     use Traits\TestCaseTrait;
@@ -9,13 +12,13 @@ class TestCase extends \Orchestra\Testbench\TestCase
     /**
      * Load Package Service Provider.
      *
-     * @param  \Illuminate\Foundation\Application  $app
+     * @param  Application  $app
      * @return array List of Service Provider
      */
     protected function getPackageProviders($app)
     {
         return [
-            \CleaniqueCoders\Lookup\LookupServiceProvider::class,
+            LookupServiceProvider::class,
         ];
     }
 }
